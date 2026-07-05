@@ -78,6 +78,14 @@ test('extractTaskNotification reads Claude Code workflow completion events', () 
 });
 
 test('claudeProjectSlug matches Claude Code project transcript folder naming', () => {
+  if (process.platform !== 'win32') {
+    assert.equal(
+      claudeProjectSlug('/home/example/AppData/Local/Temp/demo'),
+      'home-example-AppData-Local-Temp-demo'
+    );
+    return;
+  }
+
   assert.equal(
     claudeProjectSlug('C:\\Users\\example\\AppData\\Local\\Temp\\demo'),
     'C--Users-example-AppData-Local-Temp-demo'
