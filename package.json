@@ -1,0 +1,55 @@
+{
+  "name": "cc-workflow-dashboard",
+  "version": "0.1.0",
+  "description": "Visual dashboard for managing Claude Code project workflows.",
+  "main": "src/server.js",
+  "bin": {
+    "cc-workflow-dashboard": "bin/ultracode.js",
+    "ultracode": "bin/ultracode.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "public",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node bin/ultracode.js --no-open",
+    "dev": "node --watch bin/ultracode.js --no-open",
+    "build:web": "vite build",
+    "prepack": "npm run build:web && npm test",
+    "pack:check": "npm pack --dry-run",
+    "test": "node --test"
+  },
+  "keywords": [
+    "claude-code",
+    "workflow",
+    "dashboard",
+    "ultracode"
+  ],
+  "author": "ChenXplorer",
+  "license": "MIT",
+  "homepage": "https://github.com/ChenXplorer/cc-workflow-dashboard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenXplorer/cc-workflow-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChenXplorer/cc-workflow-dashboard/issues"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.173",
+    "express": "^4.21.2",
+    "ws": "^8.18.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "@xyflow/react": "^12.11.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "vite": "^8.1.3"
+  }
+}
